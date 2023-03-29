@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= title
+  p Estás en la #{title}.
+
+  li Routes:
+    ul: i localhost:3000/user
+      ul: a(href="./user/saludo/nombre/apellido" target="_blank" title="Reemplazar 'nombre' y 'apellido' en params.") localhost:3000/user/nombre/apellido
+
+    ul: i localhost:3000/maths
+      ul: a(href="./maths/suma/0/0" target="_blank" title="Reemplazar 'num1' y 'num1' en params.") localhost:3000/maths/suma/num1/num2
+      ul: a(href="./maths/dividir/10/2" target="_blank" title="Reemplazar 'dividendo' y 'divisor' en params.") localhost:3000/maths/dividir/dividendo/divisor
+      ul: a(href="./maths/par-o-impar?num=0" target="_blank" title="Insertar un número por query.") localhost:3000maths/par-o-impar?num=
+      
+    ul: i localhost:3000/list
+      ul: a(href="./list?producto1&producto2&producto3&producto4&producto5&producto6" target="_blank" title="Insertar productos por query.") localhost:3000/list/list?producto1&producto2&producto3&producto4&producto5&producto6
+
+    ul: i localhost:3000/method
+      ul: small Debe recibir un objeto mediante el 'body' con esta estructura: {"nombre":"ejemplo"}.
